@@ -2,13 +2,10 @@ name: SonarQube Backend Analysis
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'backend/**'
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
-    paths:
-      - 'backend/**'
+    branches: [ master ]
+
 
 jobs:
   sonarqube:
@@ -40,7 +37,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('backend/pom.xml') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze

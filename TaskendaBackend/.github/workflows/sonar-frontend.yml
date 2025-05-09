@@ -2,13 +2,9 @@ name: SonarQube Frontend Analysis
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'frontend/**'
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
-    paths:
-      - 'frontend/**'
+    branches: [ master ]
 
 jobs:
   sonarqube:
